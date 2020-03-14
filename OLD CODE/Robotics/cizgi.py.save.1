@@ -1,0 +1,15 @@
+import RPi.GPIO as gpio
+import time
+
+def init():
+    gpio.setmode(gpio.BCM)
+    gpio.setup(18,gpio.OUT)
+    gpio.setup(22,gpio.OUT)
+    gpio.setup(17,gpio.OUT)
+    gpio.setup(27,gpio.OUT)
+    
+def ileri(tf):
+    gpio.output(18,1)
+    gpio.output(22,1)
+    gpio.output(17,0)
+    gpio.output(27,0)

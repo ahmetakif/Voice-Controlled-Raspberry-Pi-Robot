@@ -1,0 +1,28 @@
+from SimpleCV import *
+import time
+
+cam = Camera()
+threshold = 5.0
+sonuc = cigsonuc
+
+def hareket():
+	ilk = cam.getImage()
+	time.sleep(0.5)
+	son = cam.getImage()
+	fark = son - ilk
+	matrix = fark.getNumpy()
+	mean = matrix.mean()
+
+#	fark.show()
+
+	if mean >= threshold:
+		print "Hareket Algilandi"
+		cigsonuc = 1
+	else:
+		cigsonuc = 0	
+	
+        sonuc = cigsonuc
+	print 'hareket:', sonuc
+
+hareket()
+
